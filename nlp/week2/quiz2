@@ -1,0 +1,115 @@
+Sequence tagging with probabilistic models QUIZ
+
+Which of these models are generative i. e., which of them model the distribution p(\mathbf{x}, \mathbf{y})p(x,y)?
+========================
+
+Hidden Markov model
+
+​	  be corresponding hidden tags. Find the correct formula for Maximum Entropy Markov Model:
+
+p(y∣x)= 
+t=1
+∏
+T
+​	 p(y 
+t
+​	 ∣y 
+t−1
+​	 ,x 
+t
+​	 )
+===============
+Find the correct statements about Viterbi algorithm.
+
+At each time step of the Viterbi algorithm, for each state the probability of the best tag sequence ending in this state is computed. This probability is estimated using the similar probabilities from the previous step and the current word.
+
+Viterbi algorithm can find dynamically the most probable sequence of hidden tags in O(N^2 T)O(N 
+2
+ T) operations. The brute force search of this solution would take an exponential time on TT.
+ ===========================
+
+ Which of these models are discriminative, i. e., which of them model the distribution p(\mathbf{y} | \mathbf{x})p(y∣x)?
+ Maximum Entropy Markov Models
+ CONDITIONAL RANDOM FIELDS
+ =============================
+ Let \mathbf{x} = x_1, \ldots, x_nx=x 
+1
+​	 ,…,x 
+n
+​	  be visible words and \mathbf{y} = y_1, \ldots, y_ny=y 
+1
+​	 ,…,y 
+n
+​	  be corresponding hidden tags. Find the correct formula for Hidden Markov Model:
+p(x,y)=p(x∣y)p(y)= 
+t=1
+∏
+T
+​	 p(x 
+t
+​	 ∣y 
+t
+​	 )p(y 
+t
+​	 ∣y 
+t−1
+​	 )
+
+===================
+
+Find the correct statements about Viterbi algorithm.
+
+At each time step of the Viterbi algorithm, for each state the probability of the best tag sequence ending in this state is computed. This probability is estimated using the similar probabilities from the previous step and the current word.
+
+
+Viterbi algorithm can find dynamically the most probable sequence of hidden tags in O(N^2 T)O(N 
+2
+ T) operations. The brute force search of this solution would take an exponential time on TT.
+
+====================
+
+Consider a Hidden Markov Model with three hidden states: N (noun), V (verb) and O (other). Let all transitions between states be equiprobable. Consider the following possible outputs:
+
+N: mimsy | borogoves
+
+V: were | borogoves
+
+O: All | mimsy | the
+
+Let all these outputs be also equiprobable.
+
+Consider the sentence "All mimsy were the borogoves" and choose the correct statement.
+
+There are two possible best tag sequences: ONVON and ONVOV. They are equiprobable.
+
+================================
+
+As before, consider a Hidden Markov Model with three hidden states: N (noun), V (verb) and O (other). Let all transitions between states be equiprobable. Consider the following possible outputs:
+
+N: mimsy | borogoves
+
+V: were | borogoves
+
+O: All | mimsy | the
+
+Let all these outputs be also equiprobable.
+
+The probability p (V | O) of a transition from O to V is \frac{1}{3} 
+3
+1
+​	  in this model. Let's reestimate it on the sentence "All mimsy were the borogoves" using one iteration of Baum-Welch algorithm.
+
+Find the new value of this probability and write it with precision of 3 digits after the decimal point.
+
+Hint: there are four possible tag sequences: ONVON, ONVOV, OOVON, OOVOV. The first and the second sequences have the same probability, and so do the third and the fourth ones. You need to estimate these probabilities and find the ratio of the expectations for (O -> V) and (O->?) transition counts.
+
+=  0.375
+
+						O->V		O->?		
+										
+O	N	V	O	N	5.71559E-05	0	0	2	0.000114312	
+O	N	V	O	V	5.71559E-05	1	5.71559E-05	2	0.000114312	
+O	O	V	O	N	3.81039E-05	1	3.81039E-05	3	0.000114312	
+O	O	V	O	V	3.81039E-05	2	7.62079E-05	3	0.000114312	
+										
+							0.000171468		0.000457247	0.375

@@ -1,0 +1,100 @@
+
+1. Question 1
+Given the corpus of three sentences
+
+This is the house that Jack built.
+
+This is the malt that lay in the house that Jack built.
+
+This is the rat that ate the malt that lay in the house that Jack built.
+
+calculate the probability p ( lay | that ) using maximum likelihood estimation.
+
+
+1/3
+
+
+
+
+Question 22
+points
+2. Question 2
+Consider the bigram language model trained on the sentence:
+
+This is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.
+
+Find the probability of the sentence:
+
+This is the rat that worried the dog that Jack built.
+
+
+
+
+
+\frac1{6} \cdot \frac1{7} \cdot \frac1{6} \cdot \frac1{7} 
+6
+1
+​	 ⋅ 
+7
+1
+​	 ⋅ 
+6
+1
+​	 ⋅ 
+7
+1
+​	 
+
+​	 
+
+Question 31
+point
+3. Question 3
+Consider the trigram language model trained on the sentence:
+
+This is the rat that ate the malt that lay in the house that Jack built.
+
+Find the perplexity of this model on the test sentence:
+
+This is the house that Jack built.
+
+\infty ∞
+
+
+
+4. Question 4
+Apply add-one smoothing to the trigram language model trained on the sentence:
+
+This is the rat that ate the malt that lay in the house that Jack built.
+
+Find the perplexity of this smoothed model on the test sentence:
+
+This is the house that Jack built.
+
+Write the answer with precision of 3 digits after the decimal point.
+
+
+10.205
+
+Question 52
+points
+5. Question 5
+Find one incorrect statement below:
+
+
+The smaller holdout perplexity is - the better the model.
+
+
+Trigram language models can have a larger perplexity than bigram language models.
+
+
+If a test corpus does not have out-of-vocabulary words, smoothing is not needed.
+
+
+End-of-sentence tokens are necessary for modelling probabilities of sentences of different lengths.
+
+
+N-gram language models cannot capture distant contexts.
+
+
+I, Malathi Sankar, understand that submitting work that isn’t my own may result in permanent failure of this course or deactivation of my Coursera account. Learn more about Coursera’s Honor Code
