@@ -1,0 +1,74 @@
+WEEK 3 - QUIZ1
+Compute a second-order co-occurrence between the words 'bees' and 'honey' (the cosine similarity between their first-order co-occurrence vectors). Use the toy corpus:
+
+These are the wrong sort of bees. Quite the wrong sort. So I should think they would make the wrong sort of honey.
+
+Let's define a context of a word as three words to the left and three words to the right from the target word, occurred within the same sentence (if there are any).
+Forthe first-order co-occurrence, let's consider pPMI values (the formula was given on slide 5 of the first video).
+Hint: in this question you actually do not need to compute anything... And the answer would be the same for any type of first-order co-occurrence.
+0
+
+==================
+
+Choose correct statements about Singular Value Decomposition (SVD), an important notion from the linear algebra. Feel free to consult any additional resource like wiki if needed.
+
+Singular values can be negative. (Wrong)
+
+
+Singular values of a rectangular matrix are its eigenvalues. (Wrong. it is the square root of the eignen vALUE)
+
+
+Singular values decomposition is not unique (for example, the zero matrix can be decomposed in infinitely many ways). (true)
+
+
+Squares of singular values of a matrix X are eigenvalues of X^T XX  (true)
+T
+ X (or X X^TXX 
+T
+ ).
+
+
+Any rectangular matrix with real entries has a singular value decomposition. (true)
+
+
+Truncated SVD is the best rank $k$ approximation of the original matrix in terms of Frobenius norm. (true)
+===================
+Find the objective function of the GloVe model.
+∑u∈W∑v∈Cf(nuv)(⟨ϕu,θv⟩+bu+b′v−lognuv)2
+
+
+===================
+
+How are word embeddings usually evaluated (qualitatively or quantitively)?
+
+
+By comparing maximal lengths of word vectors (the more is the length, the better is the model).
+
+
+By the amount of positive components of word vectors. 
+
+
+By the interpretability of the components of the vectors. 
+
+
+By Spearman's correlation (or similar rank correlation measure) with human judgements on word similarity task.(true)
+
+
+By the accuracy of analogy prediction (using some pre-defined dataset of 4-word analogies).(true)
+=======================
+
+
+Question 5
+Choose the correct statements.
+
+
+Skip-gram negative sampling (SGNS) model is too hard to train, and it is often approximated with softmax. (correct)
+
+
+For word similarity tasks, count-based methods perform on par with predictive methods.(correct)
+
+
+Representations of word or character n-grams may improve the quality of the model. (correct)
+
+
+Word2vec works fine for word analogies, but there are many concerns with word similarities. ()
