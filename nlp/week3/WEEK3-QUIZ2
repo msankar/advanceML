@@ -1,0 +1,59 @@
+How many parameters does PLSA topic model have?
+
+Let us denote the vocabulary size by |W|∣W∣, the number of documents by |D|∣D∣, the length of the corpus by |N|∣N∣, and the number of topics by |T|∣T∣.
+
+
+|T| \cdot |W|∣T∣⋅∣W∣ + |T| \cdot |D|∣T∣⋅∣D∣
+=====================
+Which assumptions are made in PLSA topic model?
+
+* Bag of words
+* Conditional independence: p(w \mid t, \, d) = p(w \mid t)p(w∣t,d)=p(w∣t)
+
+======================
+Let's see how EM-algorithm for PLSA works.
+3.73
+
+Let's see how EM-algorithm for PLSA works.
+
+Consider the following tiny document: One fly flies, two flies fly.
+
+Before building a topic model, one would usually apply lemmatization and obtain the following: One fly fly, two fly fly. So let us use this version of the text below.
+
+Consider \PhiΦ matrix from the latest M-step:
+
+topic 1	topic 2	topic 3
+fly	0.1	0.8	0.2
+one	0.4	0.1	0.3
+two	0.5	0.1	0.5
+And \ThetaΘ column for the document:
+
+document
+topic 1	0.2
+topic 2	0.7
+topic 3	0.1
+1) Compute posterior topic probabilities of E-step for the word fly.
+
+2) Compute n_{wt}n 
+wt
+​	  count for the word fly and topic 2. (Assume there are no other documents in the corpus).
+
+Enter n_{wt}n 
+wt
+​	  value with 2 digits after the decimal point.
+
+If you have difficulties with this question, get back to the last in-video question in the corresponding video. There is a full explanation of the solution there.
+
+0.8*0.7  /  (0.1*0.2 + 0.8*0.7 +  0.2*0.1) = 0.93
+
+0.93 * 4  (4 fly) = 3.73
+======================
+
+Imagine you are analysing news flow for a company. You want to know what topics are being mentioned when people discuss the company, and how they change over time.
+
+For each news article there are several modalities that you want to use: English text, time, author and category. Your final goal is to track, how topics change over time.
+
+Which additive regularizers would you add to your topic model?
+
+Multimodal
+Dynamic
