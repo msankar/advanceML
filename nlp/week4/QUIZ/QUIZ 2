@@ -1,0 +1,87 @@
+Question 1
+In the lecture as well as in this test we will have lots of formulas. Let us first make sure that we remember the used notation.
+
+Please, name the following objects: I, J, x_i, y_j, h_i, v_j, s_j
+
+length of source, length of target, source word, target word, encoder state, context vector, decoder state  (CORRECT)
+
+length of target, length of source, encoder state, decoder state, source word, target word, context vector
+
+length of source, length of target, source word, target word, encoder state, decoder state, context vector
+=======================================
+Question 2
+
+How do we compute the context (thought) vector vv for the decoder position jj in a seq2seq model without attention?
+
+
+h_I where h_I is the last encoder state
+======================================
+
+Question 3
+
+How many new parameters for the network are introduced to calculate multiplicative attention weights? (Just to calculate, we are not yet looking into how we use them afterwards).
+
+The length of the source, multiplied by the length of the target
+The dimension of an encoder state, multiplied by the dimension of a decoder state (chosen)
+No new parameters  
+=======================================
+Question 4
+Which of the following formulas stand for the additive attention? Note that h_i is the ii-th encoder state, s_j  is the jj-th decoder state, and we are interested in the similarity between them.
+
+
+w^T tanh (W [h_i, s_j]) where the brackets denote concatenation of the vectors, and ww and WW are a vector and a matrix of parameters respectively.
+=======================================
+
+Question 5
+Let us denote encoder states by h_i with ii going from 11 to II. Lets us denote by a_i^j
+​	  the similarities computed using the additive attention formula from the previous question. How should we compute the context vector v_j for the decoder position jj?
+
+
+\sum_{i=1}^I a_i^j h_i  
+
+∑Ii=1expaji∑j′expaj′ihi
+
+∑Ii=1expaji∑i′expaji′hi (CHOSEN)
+======================================
+
+Question 6
+
+Which three vectors should be passed to a decoder state s_js 
+j
+​	  in a seq2seq with attention model from the lecture?
+
+v_jv 
+j
+​	  - the context vector for position jj, calculated using attention
+
+s_{j-1}s 
+j−1
+​	  - the previous decoder state
+
+y_{j-1}y 
+j−1
+​	  - the previous word in the target sequence
+=======================================
+QUestion 7
+Which techniques would help if the data has rich morphology, informal spelling, and other sources of OOV tokens?
+
+Sub-word modeling
+
+Byte-pair encoding
+
+Copy mechanism
+=======================================
+Question 8
+Let us imagine we have trained a conversational chat-bot as a seq2seq model on Harry Potter movies subtitles. What problems could we expect?
+
+If asked in English, the bot replies in French or some other language
+
+The bot suggests to use a time-turner or probably some spell if you say you do not have enough time for your Coursera studies  (CHOSEN)
+
+The bot makes lots of spelling mistakes
+
+The bot doesn't remember what has already been decided in your dialogue (CHOSEN)
+
+When asked "What's your name?", the bot is not sure and says Harry, or Ron, or Hermione from time to time. (CHOSEN)
+
+

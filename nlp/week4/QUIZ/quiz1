@@ -1,0 +1,87 @@
+Find correct statements below.
+
+
+"Interlingual" level of transfer provides the best accuracy in statistical machine translation systems.
+
+Evaluation in Machine Translation is hard, mostly because of many variations in translations. (CORRECT)
+
+Recent machine translation systems provide equally good quality for all language pairs.
+
+Neural Machine Translation is able to produce translations for language pairs that have never been observed in train. (CORRECT)
+
+Machine Translation area was developing with gradual advances each year.
+==========================================
+
+Compute BLEU score for the following example with 2 digits after decimal point:
+
+System output: A friend when needed is a friend indeed.
+
+Reference: A friend in need is a friend indeed.
+
+0.41
+
+============================================
+
+Let us say we are building a translation system from Greek (g) to Bulgarian (b). Which of the following statements are correct?
+
+
+We will need to build a translation model p(b|g)p(b∣g).
+
+
+Language model here is complicated because different word alignments are possible.
+
+
+The noisy channel concept here corresponds to conditional distribution p(g|b)p(g∣b). (CORRECT)
+
+
+We will need to build language model p(b)p(b). (CORRECT)
+============================================
+
+Which parametrization for word alignment model would you use, if you know that sentences for your language pair often have aligned sequential chunks?
+
+Notation: (e, f) - sentence pair, (I, J) - their lengths respectively, a - alignment.
+
+
+Option 1: p(f, a|e) = p(J|e )\prod_{j=1}^J p(a_j) p(f_j | a_j, e)p(f,a∣e)=p(J∣e)∏ 
+j=1
+J
+​	 p(a 
+j
+​	 )p(f 
+j
+​	 ∣a 
+j
+​	 ,e)
+
+
+Option 2: p(f, a|e) = p(J|e) \prod_{j=1}^J p(a_j|j, I, J) p(f_j | a_j, e)p(f,a∣e)=p(J∣e)∏ 
+j=1
+J
+​	 p(a 
+j
+​	 ∣j,I,J)p(f 
+j
+​	 ∣a 
+j
+​	 ,e)
+
+
+Option 3: p(f, a|e) = p(J|e) \prod_{j=1}^J p(a_j|a_{j-1}, I, J) p(f_j | a_j, e)p(f,a∣e)=p(J∣e)∏ 
+j=1
+J
+​	 p(a 
+j
+​	 ∣a 
+j−1
+​	 ,I,J)p(f 
+j
+​	 ∣a 
+j
+​	 ,e)
+
+ANSWER  =  Option 3  selected
+=============================================
+PHRASE BASED MODEL
+
+http://www.statmt.org/book/slides/05-phrase-based-models.pdf
+
