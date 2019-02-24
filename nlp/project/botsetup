@@ -40,8 +40,7 @@ d. docker run -it -p 8080:8080 --name coursera-aml-nlp -v $PWD:/root/coursera ak
 
 ==============================
 pip install chatterbot
-python3 main_bot.py --token=781369607:AAF3dce6_kWO2bXTwxzgA2Kl1lVCgQYzZnc
-python3 main_bot.py --token=781369607:AAF3dce6_kWO2bXTwxzgA2Kl1lVCgQYzZnc
+python3 main_bot.py --token=
 
 
 
