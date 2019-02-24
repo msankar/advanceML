@@ -1,0 +1,58 @@
+# Create AWS account  malasankarbot  Tuti
+
+
+IAM
+
+https://056264805927.signin.aws.amazon.com/console/
+or 
+https://malasankarbot.signin.aws.amazon.com/console 
+
+Administrator
+Tuti
+
+
+Key Pair
+malasankarbot-key-pair-uswest
+Finger Print = 1d:30:bb:4b:c1:5f:08:89:01:8b:39:b2:85:2c:72:95:9a:2d:a2:bc
+
+Emailed file malasankarbot-key-pair-uswest.pem
+
+chmod 400 malasankarbot-key-pair-uswest.pem
+
+To connect to your Linux instance from a computer running Mac or Linux, you'll specify the .pem file to your SSH client with the -i option and the path to your private key. 
+
+ssh -i "/Users/malathi.sankar/.ssh/malasankarbot-key-pair-uswest.pem" ubuntu@ec2-18-144-23-154.us-west-1.compute.amazonaws.com
+
+ssh -L 8080:localhost:8080 -i "/Users/malathi.sankar/.ssh/malasankarbot-key-pair-uswest.pem"  ubuntu@ec2-18-144-23-154.us-west-1.compute.amazonaws.com
+
+
+
+scp -i "/Users/malathi.sankar/.ssh/malasankarbot-key-pair-uswest.pem"  dialogue_manager.py ubuntu@ec2-18-144-23-154.us-west-1.compute.amazonaws.com:/home/ubuntu/chatbot/dialogue_manager.py
+
+
+scp -i "/Users/malathi.sankar/.ssh/malasankarbot-key-pair-uswest.pem" -r project ubuntu@ec2-18-144-23-154.us-west-1.compute.amazonaws.com:/home/ubuntu/chatbot/project
+
+========================
+
+73.93.141.101
+
+
+========================
+
+sudo apt-get install tmux 
+tmux new -s my_chatbot_session
+# you live here
+tmux detach
+
+tmux attach -t my_chatbot_session
+=================================
+docker rm coursera-aml-nlp
+docker pull akashin/coursera-aml-nlp
+docker run -it -p 8080:8080 --name coursera-aml-nlp -v $PWD:/root/coursera akashin/coursera-aml-nlp
+docker stop coursera-aml-nlp
+docker start -i coursera-aml-nlp
+
+===================================================================
+https://us-west-1.console.aws.amazon.com/ec2/v2/home?region=us-west-1#Instances:sort=instanceId
+
+

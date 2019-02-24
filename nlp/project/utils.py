@@ -49,12 +49,18 @@ def load_embeddings(embeddings_path):
     ########################
     #### YOUR CODE HERE ####
     ########################
+    starspace_embeddings = {}
+    dim = 0
+    #for line in open('./starspaceEmbeddings.tsv'):
+    for line in open(embeddings_path):
+        word,*vec = line.strip().split()
+        vflt = []
+        dim = len(vec)
+        for v in vec:
+            vflt.append(float(v))
+        starspace_embeddings[word] = np.array(vflt, dtype=np.float32)
 
-    # remove this when you're done
-    raise NotImplementedError(
-        "Open utils.py and fill with your code. In case of Google Colab, download"
-        "(https://github.com/hse-aml/natural-language-processing/blob/master/project/utils.py), "
-        "edit locally and upload using '> arrow on the left edge' -> Files -> UPLOAD")
+    return starspace_embeddings, dim
 
 
 def question_to_vec(question, embeddings, dim):
@@ -65,13 +71,15 @@ def question_to_vec(question, embeddings, dim):
     ########################
     #### YOUR CODE HERE ####
     ########################
-
-    # remove this when you're done
-    raise NotImplementedError(
-        "Open utils.py and fill with your code. In case of Google Colab, download"
-        "(https://github.com/hse-aml/natural-language-processing/blob/master/project/utils.py), "
-        "edit locally and upload using '> arrow on the left edge' -> Files -> UPLOAD")
-
+    returVec = np.zeros((dim,), dtype=np.float32)
+    countOfWords = 0
+    for qword in question.split():
+        if (qword in embeddings):
+            returVec += embeddings[qword]
+            countOfWords = countOfWords+1
+    if countOfWords == 0:
+        return returVec
+    return returVec/countOfWords #mean of all word vectors in the question
 
 def unpickle_file(filename):
     """Returns the result of unpickling the file content."""
