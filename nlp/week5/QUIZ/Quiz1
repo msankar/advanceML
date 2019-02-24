@@ -1,0 +1,84 @@
+What is considered a part of NLU?
+
+Slot tagger (Chosen)
+State tracker
+Intent classifier  (Chosen)
+
+================================
+What metrics do we use for NLU evaluation?
+
+Task success rate
+Number of turns in the dialog 
+Slots F1 (chosen)
+Intent accuracy (chosen)
+
+===============================
+Choose correct statements about NLU.
+
+You can use Convolutional Networks for slot tagging. (chosen)
+You can use 1D convolutions for intent classification. (chosen)
+Training a joint NLU model helps intent classifier and slot tagger. (chosen)
+Joint NLU model can't produce predictions faster than two separate models combined (one for intent classification and another for slot tagging)
+
+================================
+
+Choose correct statements about dialog context.
+
+We can use memory networks to deal with context. (chosen)
+
+We need dialog context in single-turn dialogs.
+
+We can add a simple feature like "previous utterance intent" as a categorical feature to NLU to start taking into account the context of the dialog.(chosen)
+
+==================================
+Let me remind you the BIOES lexicon encoding algorithm:
+
+Suppose you have a lexicon of 3 places:
+
+Los Angeles
+San Francisco
+San Francisco Airport
+Let's encode the text "Los Francisco Airport".
+
+What encoding will we have?
+B I E(chosen)
+
+B B E 
+
+B E E
+
+===================================
+What is considered a part of a dialog state in DSTC 2 challenge?
+
+Method  (chosen)
+The intent of previous utterance
+Requested slots (chosen)
+Goals (chosen)
+====================================
+How Frames dataset was collected?
+
+Computer-computer dialogs
+Human-human dialogs (chosen)
+Human-computer dialogs  
+
+=================================
+Choose correct statements about dialog policy.
+
+
+We need some kind of NLG (at least with hand-crafted rules) to convert a system policy to a human readable utterance. (chosen)
+
+We can't learn a dialog manager end-to-end. 
+
+This is a mapping from a dialog state to a system action. (chosen)
+
+
+
+
+
+
+
+
+
+
+
+
